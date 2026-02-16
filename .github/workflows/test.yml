@@ -1,4 +1,4 @@
-name: Github-actions Practice
+name: Github-actions Pipeline
 
 on:
   push:
@@ -9,7 +9,5 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Variables
-      run: |
-        echo "Commit is $GITHUB_SHA"
-        echo  "Repo is $GITHUB_REPOSITORY"
+    - name: Secret test
+      run: echo "${{secrets.MY_SECRET}}"
