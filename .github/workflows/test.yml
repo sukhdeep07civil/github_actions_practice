@@ -1,16 +1,15 @@
-name: First Pipeline
+name: Github-actions Practice
 
 on:
   push:
     branches:
     - main
-    
+
 jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-    - name: Run commands
+    - name: Variables
       run: |
-        pwd
-        ls
-        echo "I am inside a Github VM"
+        echo "Commit is $GITHUB_SHA"
+        echo  "Repo is $GITHUB_REPOSITORY"
